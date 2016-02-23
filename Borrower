@@ -4,7 +4,7 @@ public abstract Borrower{
 abstract browseAvailable(String category){
 }
 
-abstract checkAvailable(int isbn){
+abstract checkAvailable(int isbn, String bookname){
 }
 
 abstract checkout(int isbn, String bookname){
