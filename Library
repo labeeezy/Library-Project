@@ -15,4 +15,7 @@ public class Library {
 	public void removeBook(Book book){
 		bookList.remove(book);
 	}
+	
+	public void checkHistory(Book book){
+		
 }
