@@ -1,2 +1,21 @@
 
-Testing 123
+public class Book{
+	
+	private int isbn;
+	private String title, author, category, status;
+	
+	public Book(int id, String t, String a, String c, String s){
+		this.isbn = id;
+		this.title = t;
+		this.author = a;
+		this.category = c;
+		this.status = s;
+	}
+	
+	@Override
+	public String toString(){
+		return "\nTitle: " + title + "\nAuthor: " + author +
+				"\nISBN: " + isbn + "\nPrice: " + price + "\n";
+	}
+
+}
