@@ -12,6 +12,7 @@ public class Library {
 		bookList.add(book);
 	}
 	
-	
-
+	public void removeBook(Book book){
+		bookList.remove(book);
+	}
 }
