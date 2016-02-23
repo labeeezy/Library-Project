@@ -12,10 +12,9 @@ public class Book{
 		this.status = s;
 	}
 	
-	@Override
 	public String toString(){
 		return "\nTitle: " + title + "\nAuthor: " + author +
-				"\nISBN: " + isbn + "\nPrice: " + price + "\n";
+				"\nISBN: " + isbn + "\nCategory: " + category + "\nStatus: " + status;
 	}
 
 }
