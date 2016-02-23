@@ -1,21 +1,26 @@
 import java.util.ArrayList;
+	import java.io.*;
 
-public class Library {
-	
-	private List<Book> bookList;
-
-	public Library(){
-		bookList = new ArrayList<Book>();
-	}
-	
-	public void addBook(Book book){
-		bookList.add(book);
-	}
-	
-	public void removeBook(Book book){
-		bookList.remove(book);
-	}
-	
-	public void checkHistory(Book book){
+	public class Library {
 		
+		private ArrayList<Book> bookList;
+		private BufferedReader reader = new BufferedReader(new FileReader("books.txt"), 1024);
+		
+		public Library(){
+			bookList = new ArrayList<Book>();
+		}
+		
+		public void addBook(Book book){
+			bookList.add(book);
+		}
+		
+		public void removeBook(Book book){
+			bookList.remove(book);
+		}
+		
+		public void checkHistory(Book book){
+			
+	}
+
+    
 }
