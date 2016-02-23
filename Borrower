@@ -1,1 +1,14 @@
+public abstract Borrower{
 
+
+abstract browseAvailable(String category){
+}
+
+abstract checkAvailable(int isbn){
+}
+
+abstract checkout(int isbn, String bookname){
+}
+
+abstract returnBook(int isbn, String bookname){
+}
