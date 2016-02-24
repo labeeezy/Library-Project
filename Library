@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Library{
 
-	private ArrayList<Book> bookList = new ArrayList<Book>();
+	private ArrayList<Book> bookList = new ArrayList<Book>(); /* Not used atm */
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
@@ -19,6 +19,7 @@ public class Library{
 		}else if(x == 2){
 			librarian = true;
 		}
+		
 		if(librarian){
 			System.out.println("Enter 1 for entering a book, 2 for removing a book, or 3 for checking borrow history");
 			int lib = sc.nextInt();
@@ -26,18 +27,47 @@ public class Library{
 				System.out.println("Enter the parameters of the book");
 				System.out.println("Enter the ISBN ID of the book");
 				int isbn = sc.nextInt();
+				String z = sc.nextLine(); /*extra because it bugs for some reason without*/
 				System.out.println("Enter the title of the book");
-				String title = sc.nextLine();
-				String z = sc.nextLine(); /*extra because it bugs for some reason without. It completely skips it when I run*/
+				String ttitle = sc.nextLine();
 				System.out.println("Enter the author of the book");
-				String author = sc.nextLine();
+				String author = "Bob";
 				System.out.println("Enter the category of the book");
 				String category = sc.nextLine();
 				System.out.println("Enter the status of the book");
 				String status = sc.nextLine();
-				Book b = new Book(isbn,title,author,category,status);
+				Book b = new Book(isbn,ttitle,author,category,status);
 				writer.newLine();
 				writer.append(b.toString());
+			}
+			
+			if (lib == 2){
+				BufferedWriter removalWriter = new BufferedWriter(new FileWriter("temp.txt", false));
+				System.out.println("What is the ISBN ID of the book you wish to remove?");
+				String removalISBN = "ISBN ID: \"" + sc.nextInt();
+				String keepLine;
+				while((keepLine = reader.readLine()) != null){
+					if (keepLine.contains(removalISBN) == false){
+						removalWriter.append(keepLine);
+						removalWriter.newLine();
+					}
+				}
+				removalWriter.close();
+				BufferedReader tempReader = new BufferedReader(new FileReader("temp.txt"));
+				BufferedWriter removalWriter2 = new BufferedWriter(new FileWriter("book.txt", false));
+				String newLine;
+				while((newLine = tempReader.readLine()) != null){
+					removalWriter2.append(newLine);
+					removalWriter2.newLine();
+				}
+				removalWriter2.close();
+				tempReader.close();
+				
+				System.out.println("The book has been removed");
+			}
+			
+			if (lib == 3){
+				
 			}
 		}
 		reader.close();
