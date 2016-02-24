@@ -28,8 +28,8 @@ public class Library{
 				int isbn = sc.nextInt();
 				System.out.println("Enter the title of the book");
 				String title = sc.nextLine();
-				System.out.println("Enter the author of the book");
 				String z = sc.nextLine(); /*extra because it bugs for some reason without. It completely skips it when I run*/
+				System.out.println("Enter the author of the book");
 				String author = sc.nextLine();
 				System.out.println("Enter the category of the book");
 				String category = sc.nextLine();
