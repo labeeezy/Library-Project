@@ -14,7 +14,7 @@ public class Book{
 	
 	public String toString(){
 		return "Title: \"" + title + "\" , Author: \"" + author +
-				"\", ISBN: \"" + isbn + "\", Category: \"" + category + "\", Status: \"" + status;
+				"\", ISBN: \"" + isbn + "\", Category: \"" + category + "\", Status: \"" + status + "\"";
 	}
 
 }
