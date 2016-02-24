@@ -13,7 +13,7 @@ public class Book{
 	}
 	
 	public String toString(){
-		return "ISBN ID: \"" + isbn + "\" , Title: \"" + title +
+		return "ISBN ID: \"" + isbn + "\", Title: \"" + title +
 				"\", Author: \"" + author + "\", Category: \"" + category + "\", Status: \"" + status + "\"";
 	}
 
