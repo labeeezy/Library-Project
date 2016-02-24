@@ -1,26 +1,47 @@
 import java.util.ArrayList;
-	import java.io.*;
+import java.util.Scanner;
+import java.io.*;
 
-	public class Library {
-		
-		private ArrayList<Book> bookList;
-		private BufferedReader reader = new BufferedReader(new FileReader("books.txt"), 1024);
-		
-		public Library(){
-			bookList = new ArrayList<Book>();
+public class Library{
+
+	private ArrayList<Book> bookList = new ArrayList<Book>();
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("book.txt", true));
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter 1 for borrower or 2 for Librarian");
+		Boolean borrower = false;
+		Boolean librarian = false;
+		int x = sc.nextInt();
+		if(x == 1){
+			borrower = true;
+		}else if(x == 2){
+			librarian = true;
 		}
-		
-		public void addBook(Book book){
-			bookList.add(book);
+		if(librarian){
+			System.out.println("Enter 1 for entering a book, 2 for removing a book, or 3 for checking borrow history");
+			int lib = sc.nextInt();
+			if (lib == 1){
+				System.out.println("Enter the parameters of the book");
+				System.out.println("Enter the ISBN ID of the book");
+				int isbn = sc.nextInt();
+				System.out.println("Enter the title of the book");
+				String title = sc.nextLine();
+				System.out.println("Enter the author of the book");
+				String author = sc.nextLine();
+				System.out.println("Enter the category of the book");
+				String category = sc.nextLine();
+				System.out.println("Enter the status of the book");
+				String status = sc.nextLine();
+				Book b = new Book(isbn,title,author,category,status);
+				writer.newLine();
+				writer.append(b.toString());
+			}
 		}
-		
-		public void removeBook(Book book){
-			bookList.remove(book);
-		}
-		
-		public void checkHistory(Book book){
-			
+		reader.close();
+		writer.close();
+		sc.close();
+
 	}
-
-    
 }
