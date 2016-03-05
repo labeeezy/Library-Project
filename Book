@@ -1,5 +1,8 @@
 
 public class Book{
+boolean borrowedState;	
+Borrower borrowedHistory;
+
 	
 	private int isbn;
 	private String title, author, category, status;
