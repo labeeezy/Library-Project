@@ -1,7 +1,9 @@
+import java.util.Scanner;
 public class Student extends Borrower {
 
 
 public  browseAvailable(String category){
+
 }
 
 public checkAvailable(int isbn, String bookname){
