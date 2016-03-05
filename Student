@@ -46,8 +46,8 @@ BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
 reader.close();
 }
 
-public void checkout(int isbn, String bookname){//how do i remove a book from text file
-if(takenbooks < 2)//i made a new variable taken books where i initialize it
+public void checkout(int isbn, String bookname){
+if(takenbooks < 2)
   //(if book is in text file)
     System.out.println(bookname + isbn + " has been checked out. You have 2 weeks to return the book. Enjoy reading!");
     //insert remove from textfile method here
