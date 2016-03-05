@@ -36,7 +36,7 @@ public class Project{
 				System.out.println("Enter the title of the book");
 				String ttitle = sc.nextLine();
 				System.out.println("Enter the author of the book");
-				String author = "Bob";
+				String author = sc.nextLine();
 				System.out.println("Enter the category of the book");
 				String category = sc.nextLine();
 				System.out.println("Enter the status of the book");
@@ -49,25 +49,10 @@ public class Project{
 			if (lib == 2){
 				BufferedWriter removalWriter = new BufferedWriter(new FileWriter("temp.txt", false));
 				System.out.println("What is the ISBN ID of the book you wish to remove?");
-				String removalISBN = "ISBN ID: \"" + sc.nextInt();
-				String keepLine;
-				while((keepLine = reader.readLine()) != null){
-					if (keepLine.contains(removalISBN) == false){
-						removalWriter.append(keepLine);
-						removalWriter.newLine();
-					}
-				}
-				removalWriter.close();
-				BufferedReader tempReader = new BufferedReader(new FileReader("temp.txt"));
-				BufferedWriter removalWriter2 = new BufferedWriter(new FileWriter("book.txt", false));
-				String newLine;
-				while((newLine = tempReader.readLine()) != null){
-					removalWriter2.append(newLine);
-					removalWriter2.newLine();
-				}
-				removalWriter2.close();
-				tempReader.close();
-				
+				String removalISBN = "ISBN ID: \"" + sc.nextInt() + "\"", Title: \"" + sc.nextLine();
+				String removalTitle = "Title: \"" + sc.nextLine(); "\""
+				String removalLine = removalISBN + removalTitle;
+				library.removeBook(removalLine);
 				System.out.println("The book has been removed");
 			}
 			
