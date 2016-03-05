@@ -1,5 +1,4 @@
-import java.util.Scanner; //Jonathan edit ur library class so that when user enters 1 for borrower, you prompt it whether it wants student or teacher.
-public class Teacher extends Borrower {
+import java.util.Scanner; 
 
 int takenbooks = 0;
 int ID;
@@ -10,7 +9,7 @@ ID = teacher ID;
 name = teacherName;
 }
 
-public void browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
+public void browseAvailable(String category){
 BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
 System.out.println("What is the Category you're interested in?");
 String checkCat = "Category: "" + category;
@@ -24,7 +23,7 @@ reader.close();
 }
 }
 
-public void checkAvailable(int isbn, String bookname){//how do i make a condition where it shows that the book is in the textfile.
+public void checkAvailable(int isbn, String bookname){
 BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
 	System.out.println("What is the book you're interested in?");
 	String checkBook = "Book: "" + bookname;
