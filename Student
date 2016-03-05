@@ -2,13 +2,18 @@ import java.util.Scanner; //Jonathan edit ur library class so that when user ent
 public class Student extends Borrower {
 
 int takenbooks = 0;
-
-public Student{
 int osis;
 String lastname;
 String firstname;
 int grade;
 int officialclass;
+
+public Student(int studentosis, String studentlastname, String studentfirstname, int studentgrade, int offclass){
+osis = studentosis;
+lastname = studentlastname;
+firstname = studentfirstname;
+grade = studentgrade;
+officialclass = offclass;
 }
 
 public void browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
