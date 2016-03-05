@@ -46,11 +46,13 @@ BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
 reader.close();
 }
 
-public void checkout(int isbn, String bookname){
+public void checkout(Library library){
 if(takenbooks < 2)
- 
+ library.changeBook(isbn, bookname);
+ takenbooks++;
+ System.out.println("You have checked out" + bookname + "It is due in two weeks.");
 }
-}
+
 
 public void returnBook(int isbn, String bookname){//how do i add a book back to textfile
   (if book is not in text file)
