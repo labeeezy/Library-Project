@@ -41,9 +41,8 @@ public class Project{
 				String category = sc.nextLine();
 				System.out.println("Enter the status of the book");
 				String status = sc.nextLine();
-				Book b = new Book(isbn,ttitle,author,category,status);
-				writer.newLine();
-				writer.append(b.toString());
+				Book b = new Book(isbn,ttitle,author,category,status,false,"");
+				library.addBook(b.toString());
 			}
 			
 			if (lib == 2){
