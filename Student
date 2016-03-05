@@ -43,7 +43,7 @@ BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
 	  else{
 	  		System.out.println("This book is not available");	
 				}
-reader.close()
+reader.close();
 }
 
 public void checkout(int isbn, String bookname){//how do i remove a book from text file
