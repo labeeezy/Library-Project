@@ -17,7 +17,16 @@ officialclass = offclass;
 }
 
 public void browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
-
+BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
+	System.out.println("What is the Category you're interested in?");
+	String checkCat = "Category: "" + category;
+	String keepLine;
+	while((keepLine = reader.readLine()) != null){
+	  if (keepLine.contains(checkCat)){
+			System.out.println(keepLine);
+					}
+				}
+reader.close();
 }
 
 public void  checkAvailable(int isbn, String bookname){//how do i make a condition where it shows that the book is in the textfile.
