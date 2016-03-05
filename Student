@@ -1,3 +1,14 @@
 public class Student extends Borrower {
 
-public 
+
+public  browseAvailable(String category){
+}
+
+public checkAvailable(int isbn, String bookname){
+}
+
+public checkout(int isbn, String bookname){
+}
+
+public returnBook(int isbn, String bookname){
+}
