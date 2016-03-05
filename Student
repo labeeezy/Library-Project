@@ -48,14 +48,16 @@ reader.close();
 
 public void checkout(int isbn, String bookname){
 if(takenbooks < 2)
-  //(if book is in text file)
-    System.out.println(bookname + isbn + " has been checked out. You have 2 weeks to return the book. Enjoy reading!");
-    //insert remove from textfile method here
-    takenbooks++;
-  else
-    System.out.println(bookname + isbn + " is not in the library.")
-else
-  System.out.println("you have taken out too many books.");
+  BufferedWriter removalWriter = new BufferedWriter(new FileWriter("temp.txt", false));
+  System.out.println("What is the ISBN ID of the book you wish to checkout?");
+  String removalISBN = "ISBN ID: \"" isbn;
+  String keepLine;
+  while((keepLine = reader.readLine()) != null){
+  if (keepLine.contains(removalISBN) == false){
+  removalWriter.append(keepLine);
+  removalWriter.newLine();
+  System.out.println(bookname + "is checked out. You have to return it in 2 weeks.");
+}
 }
 
 public void returnBook(int isbn, String bookname){//how do i add a book back to textfile
