@@ -1,9 +1,10 @@
 import java.util.Scanner; //Jonathan edit ur library class so that when user enters 1 for borrower, you prompt it whether it wants student or teacher.
 public class Student extends Borrower {
 
+int takenbooks = 0;
 
 public  browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
-
+//how tf do i print our a text file
 }
 
 public checkAvailable(int isbn, String bookname){//how do i make a condition where it shows that the book is in the textfile.
