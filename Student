@@ -30,10 +30,18 @@ reader.close();
 }
 
 public void  checkAvailable(int isbn, String bookname){//how do i make a condition where it shows that the book is in the textfile.
-//if(book is in text file)
-System.out.println(bookname + isbn + " is currently available.");
-//if(book is not in text file)
-System.out.println(bookname + isbn + " is currently checked out.");
+BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
+	System.out.println("What is the book you're interested in?");
+	String checkBook = "Book: "" + bookname;
+	String keepLine;
+	while((keepLine = reader.readLine()) != null){
+	  if (keepLine.contains(bookname)){
+			System.out.println("This book is available");
+					}
+	  else
+	  		System.out.println("This book is not available");	
+				}
+reader.close()
 }
 
 public void checkout(int isbn, String bookname){//how do i remove a book from text file
