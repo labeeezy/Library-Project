@@ -1,16 +1,21 @@
-import java.util.Scanner;
+import java.util.Scanner; //Jonathan edit ur library class so that when user enters 1 for borrower, you prompt it whether it wants student or teacher.
 public class Student extends Borrower {
 
 
-public  browseAvailable(String category){
+public  browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
 
 }
 
 public checkAvailable(int isbn, String bookname){
+System.out.println(bookname + isbn + " is currently available.");
+System.out.println(bookname + isbn + " is currently checked out.");
 }
 
 public checkout(int isbn, String bookname){
+System.out.println(bookname + isbn + " has been checked out. You have 2 weeks to return the book. Enjoy reading!");
 }
 
 public returnBook(int isbn, String bookname){
+System.out.println(bookname + isbn + " has been returned. Thank you!");
+
 }
