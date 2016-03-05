@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.io.*;
+
+public class Library{
+  private ArrayList<String> bookList = new ArrayList<String>();
+  
+  public Library(){
+    BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
+    String addLine;
+    while ((addLine = reader.readLine()) != null){
+     bookList.add(addLine);
+    }
+  }
+  
+  public addBook(String line){
+  
