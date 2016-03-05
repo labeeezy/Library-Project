@@ -14,18 +14,23 @@ System.out.println(bookname + isbn + " is currently checked out.");
 }
 
 public checkout(int isbn, String bookname){//how do i remove a book from text file
-//(if book is in text file)
-System.out.println(bookname + isbn + " has been checked out. You have 2 weeks to return the book. Enjoy reading!");
-//insert remove from textfile method here
+if(takenbooks < 2)//i made a new variable taken books where i initialize it
+  //(if book is in text file)
+    System.out.println(bookname + isbn + " has been checked out. You have 2 weeks to return the book. Enjoy reading!");
+    //insert remove from textfile method here
+    takenbooks++;
+  else
+    System.out.println(bookname + isbn + " is not in the library.")
 else
-System.out.println(bookname + isbn + " is not in the library.")
+  System.out.println("you have taken out too many books.");
 }
 
 public returnBook(int isbn, String bookname){//how do i add a book back to textfile
-(if book is no in text file)
-System.out.println(bookname + isbn + " has been returned. Thank you!");
-//insert add from textfile method here
-else
-System.out.println(bookname + isbn + " is already in the library.");
+  (if book is not in text file)
+    System.out.println(bookname + isbn + " has been returned. Thank you!");
+    //insert add from textfile method here
+    takenbooks--;
+  else
+    System.out.println(bookname + isbn + " is already in the library.");
 
 }
