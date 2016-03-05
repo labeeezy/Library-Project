@@ -1,0 +1,37 @@
+import java.util.Scanner; //Jonathan edit ur library class so that when user enters 1 for borrower, you prompt it whether it wants student or teacher.
+public class Teacher extends Borrower {
+
+int takenbooks = 0;
+
+public  browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
+//how tf do i print our a text file
+}
+
+public checkAvailable(int isbn, String bookname){//how do i make a condition where it shows that the book is in the textfile.
+//if(book is in text file)
+System.out.println(bookname + isbn + " is currently available.");
+//if(book is not in text file)
+System.out.println(bookname + isbn + " is currently checked out.");
+}
+
+public checkout(int isbn, String bookname){//how do i remove a book from text file
+if(takenbooks < 4)//i made a new variable taken books where i initialize it
+  //(if book is in text file)
+    System.out.println(bookname + isbn + " has been checked out. You have 1 week to return the book. Enjoy reading!");
+    //insert remove from textfile method here
+    takenbooks++;
+  else
+    System.out.println(bookname + isbn + " is not in the library.")
+else
+  System.out.println("you have taken out too many books.");
+}
+
+public returnBook(int isbn, String bookname){//how do i add a book back to textfile
+  (if book is not in text file)
+    System.out.println(bookname + isbn + " has been returned. Thank you!");
+    //insert add from textfile method here
+    takenbooks--;
+  else
+    System.out.println(bookname + isbn + " is already in the library.");
+
+}
