@@ -3,6 +3,11 @@ public class Teacher extends Borrower {
 
 int takenbooks = 0;
 
+public Teacher{
+int ID;
+String name;
+}
+
 public void browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
 //how tf do i print our a text file
 }
