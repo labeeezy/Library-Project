@@ -4,8 +4,11 @@ public class Student extends Borrower {
 int takenbooks = 0;
 
 public Student{
-BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
-BufferedWriter writer = new BufferedWriter(new FileWriter("book.txt", true));
+int osis;
+String lastname;
+String firstname;
+int grade;
+int officialclass;
 }
 
 public void browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
