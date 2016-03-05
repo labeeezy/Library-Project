@@ -57,6 +57,7 @@ if(takenbooks < 2)
   removalWriter.append(keepLine);
   removalWriter.newLine();
   System.out.println(bookname + "is checked out. You have to return it in 2 weeks.");
+  takenbooks++
 }
 }
 
