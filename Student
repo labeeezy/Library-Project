@@ -6,16 +6,26 @@ public  browseAvailable(String category){//assuming the main library class sets 
 
 }
 
-public checkAvailable(int isbn, String bookname){
+public checkAvailable(int isbn, String bookname){//how do i make a condition where it shows that the book is in the textfile.
+//if(book is in text file)
 System.out.println(bookname + isbn + " is currently available.");
+//if(book is not in text file)
 System.out.println(bookname + isbn + " is currently checked out.");
 }
 
-public checkout(int isbn, String bookname){
+public checkout(int isbn, String bookname){//how do i remove a book from text file
+//(if book is in text file)
 System.out.println(bookname + isbn + " has been checked out. You have 2 weeks to return the book. Enjoy reading!");
+//insert remove from textfile method here
+else
+System.out.println(bookname + isbn + " is not in the library.")
 }
 
-public returnBook(int isbn, String bookname){
+public returnBook(int isbn, String bookname){//how do i add a book back to textfile
+(if book is no in text file)
 System.out.println(bookname + isbn + " has been returned. Thank you!");
+//insert add from textfile method here
+else
+System.out.println(bookname + isbn + " is already in the library.");
 
 }
