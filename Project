@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 
-public class Library{
-
-	private ArrayList<Book> bookList = new ArrayList<Book>(); /* Not used atm */
+public class Project{
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
@@ -18,6 +16,13 @@ public class Library{
 			borrower = true;
 		}else if(x == 2){
 			librarian = true;
+		}
+		if(borrower){
+			System.out.println("Enter 1 to browse books, 2 to check availability, 3 to checkout a book, or 4 to return a book");
+			int bor = sc.nextInt();
+			if (bor == 1){
+				System.out.println("Enter the category you wish to search");
+				
 		}
 		
 		if(librarian){
