@@ -1,18 +1,19 @@
 
 public class Book{
-boolean borrowedState;	
-Borrower borrowedHistory;
 
-	
+	private boolean borrowedState;	
+	private Borrower borrowHistory;
 	private int isbn;
 	private String title, author, category, status;
 	
-	public Book(int id, String t, String a, String c, String s){
+	public Book(int id, String t, String a, String c, String s, boolean bS, Borrower bH){
 		this.isbn = id;
 		this.title = t;
 		this.author = a;
 		this.category = c;
 		this.status = s;
+		this.borrowedState = bS;
+		this.borrowHistory = bH;
 	}
 	
 	public String toString(){
