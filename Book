@@ -18,7 +18,9 @@ public class Book{
 	
 	public String toString(){
 		return "ISBN ID: \"" + isbn + "\", Title: \"" + title +
-				"\", Author: \"" + author + "\", Category: \"" + category + "\", Status: \"" + status + "\"";
+			"\", Author: \"" + author + "\", Category: \"" + category + 
+			"\", Status: \"" + status + "\"" + "borrowedState \"" + borrowedState + "\"" + 
+			"borrowedHistory \"" + borrowedHistory + "\"";
 	}
 
 }
