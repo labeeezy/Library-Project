@@ -48,12 +48,8 @@ if(takenbooks < 2)
  System.out.println("You have checked out" + bookname + "It is due in one weeks.");
 }
 
-public void returnBook(int isbn, String bookname){//how do i add a book back to textfile
-  (if book is not in text file)
-    System.out.println(bookname + isbn + " has been returned. Thank you!");
-    //insert add from textfile method here
-    takenbooks--;
-  else
-    System.out.println(bookname + isbn + " is already in the library.");
-
+public void returnBook(Library library){
+ library.changeBook(isbn, bookname, false);
+ takenbooks--;
+ System.out.println("You have returned" + bookname + "Thanks!);
 }
