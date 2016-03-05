@@ -36,6 +36,7 @@ BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
 	String keepLine;
 	while((keepLine = reader.readLine()) != null){
 	  if (keepLine.contains(bookname)){
+	  	if(borrowedState == false)
 			System.out.println("This book is available");
 					}
 	  else
