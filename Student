@@ -48,16 +48,7 @@ reader.close();
 
 public void checkout(int isbn, String bookname){
 if(takenbooks < 2)
-  BufferedWriter removalWriter = new BufferedWriter(new FileWriter("temp.txt", false));
-  System.out.println("What is the ISBN ID of the book you wish to checkout?");
-  String removalISBN = "ISBN ID: \"" isbn;
-  String keepLine;
-  while((keepLine = reader.readLine()) != null){
-  if (keepLine.contains(removalISBN) == false){
-  removalWriter.append(keepLine);
-  removalWriter.newLine();
-  System.out.println(bookname + "is checked out. You have to return it in 2 weeks.");
-  takenbooks++
+ 
 }
 }
 
