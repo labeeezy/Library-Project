@@ -3,9 +3,9 @@ public class Teacher extends Borrower {
 
 int takenbooks = 0;
 
-public Teacher{
-int ID;
-String name;
+public Teacher(int teacherID, String teacherName){
+int ID = teacher ID;
+String name = teacherName;
 }
 
 public void browseAvailable(String category){//assuming the main library class sets the users input of a category to a string variable and this method is called.
