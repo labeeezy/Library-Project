@@ -13,4 +13,18 @@ public class Library{
   }
   
   public addBook(String line){
+  }
+  
+  public changeBook(int isbn, String bookname, bootlean available){
+    for (int i = 0; i < bookList.size(); i++){
+      if (bookList.get(i).contains(bookname) && bookList.get(i).contains(isbn)){ 
+        String str = bookList.get(i);
+        if (available){
+          if (str.contains(""borrowedState: \" + false"){
+          bookList.set(i, str.replace(str.indexOf("borrowedState: \" + false"), str.lastIndexOf("borrowedState: \" + false", "borrowedState: \" + true")));
+          }
+        } else{
+           if (str.contains(""borrowedState: \" + true"){
+            bookList.set(i, str.replace(str.indexOf("borrowedState: \" + true"), str.lastIndexOf("borrowedState: \" + true", "borrowedState: \" + false")));
+          }
   
