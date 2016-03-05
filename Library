@@ -12,10 +12,20 @@ public class Library{
     }
   }
   
-  public addBook(String line){
+  public void addBook(String addLine){
   }
   
-  public changeBook(int isbn, String bookname, bootlean available){
+  public void removeBook(String removeLine){
+    for (int i = 0; i < bookList.size(); i++){
+      if (bookList.get(i).contains(removeLine)){
+        bookList.remove(i);
+      }
+    }
+  }
+  
+  public void checkHistory(String line)
+  
+  public void changeBook(int isbn, String bookname, bootlean available){
     for (int i = 0; i < bookList.size(); i++){
       if (bookList.get(i).contains(bookname) && bookList.get(i).contains(isbn)){ 
         String str = bookList.get(i);
@@ -27,4 +37,9 @@ public class Library{
            if (str.contains(""borrowedState: \" + true"){
             bookList.set(i, str.replace(str.indexOf("borrowedState: \" + true"), str.lastIndexOf("borrowedState: \" + true", "borrowedState: \" + false")));
           }
+          }
+          }
+          }
+          }
   
+  public void updateData(){
