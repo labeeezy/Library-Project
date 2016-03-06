@@ -5,8 +5,7 @@ import java.io.*;
 public class Project{
 
 	public static void main(String[] args) throws IOException{
-		BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
-		BufferedWriter writer = new BufferedWriter(new FileWriter("book.txt", true));
+		Library library = new Library();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter 1 for borrower or 2 for Librarian");
 		Boolean borrower = false;
@@ -18,10 +17,51 @@ public class Project{
 			librarian = true;
 		}
 		if(borrower){
-			System.out.println("Enter 1 to browse books, 2 to check availability, 3 to checkout a book, or 4 to return a book");
-			int bor = sc.nextInt();
-			if (bor == 1){
-				System.out.println("Enter the category you wish to search");
+			System.out.println("Enter 1 for student or 2 for teacher");
+			int pNum = sc.nextInt();
+			Borrower person;
+			int osis;
+			int teachID;
+			if (pNum == 1){
+				person = new Student();
+				System.out.println("Enter your osis number");
+				osis = nextInt();
+				if (person.findStudent() == false){
+					System.out.println("This OSIS is not found. Please create a new profile");
+					System.out.println("What is your last name");
+					String lname = nextLine();
+					System.out.println("What is your first name");
+					String fname = nextLine();
+					System.out.println("What is your grade");
+					int grade = nextInt();
+					System.out.println("What is your offical class (number without letter)");
+					int oClass = nextInt();
+					person.addStudent(osis,lname,fname,grade,oClass);
+					}
+			}
+			if (pNum == 2){
+				person = new Teacher();
+			}
+				System.out.println("Enter 1 to browse books, 2 to check availability, 3 to checkout a book, or 4 to return a book");
+				int bor = sc.nextInt();
+				if (bor == 1){
+					System.out.println("Enter the category you wish to search");
+					String cat = sc.nextLine();
+					System.out.println("These are the books with category" + cat);
+					person.browseAvailable(cat);
+					}
+				if (bor == 2){
+					System.out.println("Enter the ISBN of the book you wish to check");
+					int isbn = sc.nextInt();
+					System.out.println("Enter the title of the book you wish to check");
+					String bookname = sc.nextLine();
+					person.checkAvailable(isbn,bookname);
+				}
+				if (bor == 3){
+					
+				}
+				if (bor == 4){
+				}
 				
 		}
 		
@@ -46,7 +86,6 @@ public class Project{
 			}
 			
 			if (lib == 2){
-				BufferedWriter removalWriter = new BufferedWriter(new FileWriter("temp.txt", false));
 				System.out.println("What is the ISBN ID of the book you wish to remove?");
 				String removalISBN = "ISBN ID: \"" + sc.nextInt() + "\"", Title: \"" + sc.nextLine();
 				String removalTitle = "Title: \"" + sc.nextLine(); "\""
@@ -59,8 +98,6 @@ public class Project{
 				
 			}
 		}
-		reader.close();
-		writer.close();
 		sc.close();
 
 	}
