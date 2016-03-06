@@ -41,6 +41,14 @@ public class Project{
 			}
 			if (pNum == 2){
 				person = new Teacher();
+				System.out.println("Enter your ID")
+				osis = nextInt();
+				if (person.findTeacher() == false){
+					System.out.println("This OSIS is not found. Please create a new profile");
+					System.out.println("What is your name");
+					String tname = nextLine();
+					person.addTeacher(osis,tname);
+					}
 			}
 				System.out.println("Enter 1 to browse books, 2 to check availability, 3 to checkout a book, or 4 to return a book");
 				int bor = sc.nextInt();
@@ -58,9 +66,18 @@ public class Project{
 					person.checkAvailable(isbn,bookname);
 				}
 				if (bor == 3){
-					
+					System.out.println("Enter the ISBN of the book you wish to borrow");
+					int isbn = sc.nextInt();
+					System.out.println("Enter the title of the book you wish to borrow");
+					String bookname = sc.nextLine();
+					person.checkout(isbn,bookname,library,osis);
 				}
 				if (bor == 4){
+					System.out.println("Enter the ISBN of the book you wish to return");
+					int isbn = sc.nextInt();
+					System.out.println("Enter the title of the book you wish to return");
+					String bookname = sc.nextLine();
+					person.returnBook(isbn,bookname,library,osis);
 				}
 				
 		}
