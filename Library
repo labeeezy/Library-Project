@@ -26,6 +26,7 @@ public class Library{
   }
   
   public void checkHistory(String line){
+    System.println(line.substring(line.indexOf("Borrow History")));
   }
   
   public boolean changeBook(int isbn, String bookname, bootlean available){
@@ -49,3 +50,11 @@ public class Library{
           }
   
   public void updateData(){
+    BufferedWriter writer = new BufferedWriter(new Writer("book.txt"));
+    for (int i = 0; i < bookList.size(); i++){
+      writer.append(bookList.get(i));
+      writer.newLine();
+      writer.close();
+      }
+      }
+      
