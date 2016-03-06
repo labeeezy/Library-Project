@@ -1,14 +1,12 @@
-public abstract Borrower{
+public abstract class Borrower{
 
 
-abstract browseAvailable(String category){
-}
+abstract void browseAvailable(String category);
 
-abstract checkAvailable(int isbn, String bookname){
-}
+abstract void checkAvailable(int isbn, String bookname);
 
-abstract checkout(int isbn, String bookname){
-}
+abstract boolean checkout(int isbn, String bookname, Library library, int osis);
 
-abstract returnBook(int isbn, String bookname){
+abstract void returnBook(int isbn, String bookname, Library library, int osis);
+
 }
