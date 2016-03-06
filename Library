@@ -10,9 +10,11 @@ public class Library{
     while ((addLine = reader.readLine()) != null){
      bookList.add(addLine);
     }
+    reader.close();
   }
   
   public void addBook(String addLine){
+        bookList.add(addLine);
   }
   
   public void removeBook(String removeLine){
