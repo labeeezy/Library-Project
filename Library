@@ -2,59 +2,60 @@ import java.util.ArrayList;
 import java.io.*;
 
 public class Library{
-  private ArrayList<String> bookList = new ArrayList<String>();
-  
-  public Library(){
-    BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
-    String addLine;
-    while ((addLine = reader.readLine()) != null){
-     bookList.add(addLine);
-    }
-    reader.close();
-  }
-  
-  public void addBook(String addLine){
-        bookList.add(addLine);
-  }
-  
-  public void removeBook(String removeLine){
-    for (int i = 0; i < bookList.size(); i++){
-      if (bookList.get(i).contains(removeLine)){
-        bookList.remove(i);
-      }
-    }
-  }
-  
-  public void checkHistory(String line){
-    System.println(line.substring(line.indexOf("Borrow History")));
-  }
-  
-  public boolean changeBook(int isbn, String bookname, bootlean available){
-    for (int i = 0; i < bookList.size(); i++){
-      if (bookList.get(i).contains(bookname) && bookList.get(i).contains(isbn)){ 
-        String str = bookList.get(i);
-        if (available){
-          if (str.contains(""borrowedState: \" + false"){
-          bookList.set(i, str.replace(str.indexOf("borrowedState: \" + false"), str.lastIndexOf("borrowedState: \" + false", "borrowedState: \" + true")));
-          return true;
-          }
-        } else{
-           if (str.contains(""borrowedState: \" + true"){
-            bookList.set(i, str.replace(str.indexOf("borrowedState: \" + true"), str.lastIndexOf("borrowedState: \" + true", "borrowedState: \" + false")));
-            return true;
-          }
-          }
-          }
-          }
-          return false;
-          }
-  
-  public void updateData(){
-    BufferedWriter writer = new BufferedWriter(new Writer("book.txt"));
-    for (int i = 0; i < bookList.size(); i++){
-      writer.append(bookList.get(i));
-      writer.newLine();
-      writer.close();
-      }
-      }
-      
+	private ArrayList<String> bookList = new ArrayList<String>();
+
+	public Library() throws IOException{
+		BufferedReader reader = new BufferedReader(new FileReader("book.txt"));
+		String addLine;
+		while ((addLine = reader.readLine()) != null){
+			bookList.add(addLine);
+		}
+		reader.close();
+	}
+
+	public void addBook(String addLine){
+		bookList.add(addLine);
+	}
+
+	public void removeBook(String removeLine){
+		for (int i = 0; i < bookList.size(); i++){
+			if (bookList.get(i).contains(removeLine)){
+				bookList.remove(i);
+			}
+		}
+	}
+
+	public void checkHistory(String line){
+		System.out.println(line.substring(line.indexOf("Borrow History")));
+	}
+
+	public boolean changeBook(String isbn, String bookname, boolean available){
+		for (int i = 0; i < bookList.size(); i++){
+			if (bookList.get(i).contains(bookname) && bookList.get(i).contains(isbn)){ 
+				String str = bookList.get(i);
+				StringBuffer newStr = new StringBuffer(str);
+				if (available){
+					if (str.contains("borrowedState: \"" + "false")){
+						bookList.set(i, newStr.replace(str.indexOf("borrowedState: \"" + "false"), str.lastIndexOf("borrowedState: \"" + "false"), "borrowedState: \" + true").toString());
+						return true;
+					}
+				} else{
+					if (str.contains("borrowedState: \"" + "true")){
+						bookList.set(i, newStr.replace(str.indexOf("borrowedState: \"" + "false"), str.lastIndexOf("borrowedState: \"" + "false"), "borrowedState: \" + true").toString());
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	public void updateData() throws IOException{
+		BufferedWriter writer = new BufferedWriter(new FileWriter("book.txt"));
+		for (int i = 0; i < bookList.size(); i++){
+			writer.append(bookList.get(i));
+			writer.newLine();
+			writer.close();
+		}
+	}
+}
