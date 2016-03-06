@@ -20,7 +20,8 @@ public class Book{
 		return "ISBN ID: \"" + isbn + "\", Title: \"" + title +
 			"\", Author: \"" + author + "\", Category: \"" + category + 
 			"\", Status: \"" + status + "\"" + "borrowedState \"" + borrowedState + "\"" + 
-			"borrowedHistory \"" + borrowedHistory + "\"";
+			"borrowedHistory \"" + borrowHistory + "\"";
 	}
 
 }
+
