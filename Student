@@ -4,12 +4,6 @@ public class Student extends Borrower {
 
 Arraylist<String> studentList = new Arraylist<String>();
 
-int takenbooks = 0;
-int osis;
-String lastname;
-String firstname;
-int grade;
-int officialclass;
 public Student(){
 	BufferedReader reader = new BufferedReader(new FileReader("student.txt"));
 	String addLine;
@@ -68,11 +62,18 @@ reader.close();
 public boolean checkout(int isbn, String bookname, Library library, int osis){
 	for (int i = 0; i < studentList.size(); i++){
 	if (studentList.get(i).contains("OSIS: \"" + osis){
-		if (studentList.get(i).contains("Borrowed Books: \"0\"" || studentList.get(i).contains("Borrowed Books: \"1\"")){
-			if ( library.changeBook(isbn, bookname, true)){
- 			takenbooks++;
- 			System.out.println("You have checked out" + bookname + "It is due in two weeks.");
- 			return true;
+		if (studentList.get(i).contains("Borrowed Books: 0" || studentList.get(i).contains("Borrowed Books: 1")){
+			if (library.changeBook(isbn, bookname, true)){
+				String str = studentList.get(i);
+				if (str.contains("Borrowed Books: 0"){
+ 				studentList.set(i, str.replace(str.indexOf("Borrowed Books: 0"), str.lastIndexOf("Borrowed Books: 0", "BorrwedBooks: 1")));
+ 				}
+ 				if (str.contains("Borrowed Books: 1"){
+ 				studentList.set(i, str.replace(str.indexOf("Borrowed Books: 1"), str.lastIndexOf("Borrowed Books: 1", "BorrwedBooks: 2")));
+ 				}
+ 				
+ 				System.out.println("You have checked out" + bookname + "It is due in two weeks.");
+ 				return true;
  		}
  	}
  	}
@@ -82,8 +83,20 @@ public boolean checkout(int isbn, String bookname, Library library, int osis){
 
 
 public void returnBook(int isbn, String bookname, Library library, int osis){
- if (library.changeBook(isbn, bookname, false)){
-	 takenbooks--;
+for (int i = 0; i < studentList.size(); i++){
+ 	if (studentList.get(i).contains("OSIS: \"" + osis){
+ 		if (studentList.get(i).contains("Borrowed Books: 2" || studentList.get(i).contains("Borrowed Books: 1")){
+			if (library.changeBook(isbn, bookname, false)){
+				String str = studentList.get(i);
+				if (str.contains("Borrowed Books: 1"){
+ 				studentList.set(i, str.replace(str.indexOf("Borrowed Books: 1"), str.lastIndexOf("Borrowed Books: 1", "BorrwedBooks: 0")));
+ 				}
+ 				if (str.contains("Borrowed Books: 2"){
+ 				studentList.set(i, str.replace(str.indexOf("Borrowed Books: 2"), str.lastIndexOf("Borrowed Books: 2", "BorrwedBooks: 1")));
+ 				}
+	 System.out.println("You have returned" + bookname + "Thanks!);
  }
- System.out.println("You have returned" + bookname + "Thanks!);
+}
+}
+}
 }
